@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/stockappbar.dart';
 import 'widgets/stocklist.dart';
 
 class StockScreen extends StatelessWidget {

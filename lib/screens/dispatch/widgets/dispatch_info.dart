@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hilifeui/helper/custom_widgets.dart';
+import 'package:hilifeui/helper/utils.dart';
 
 class DispatchInfo extends StatelessWidget {
   const DispatchInfo({Key? key}) : super(key: key);
@@ -15,9 +17,7 @@ class DispatchInfo extends StatelessWidget {
           children: [
             const Text("Details",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            const SizedBox(
-              height: 6,
-            ),
+            emptyVerticalGap(6),
             const Text("#25645",
                 style: TextStyle(
                   fontSize: 14,
@@ -26,10 +26,10 @@ class DispatchInfo extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 14,
                 )),
-            const SizedBox(height: 5),
+            emptyVerticalGap(10),
             const Text("Bihani Supliers",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 10),
+            emptyVerticalGap(10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -50,17 +50,13 @@ class DispatchInfo extends StatelessWidget {
                 )
               ],
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            emptyVerticalGap(10),
             Divider(
               height: 5,
               thickness: 2,
               color: Colors.black.withOpacity(0.1),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            emptyVerticalGap(10),
             Column(
               children: [
                 Row(
@@ -76,9 +72,7 @@ class DispatchInfo extends StatelessWidget {
                         ))
                   ],
                 ),
-                const SizedBox(
-                  height: 3,
-                ),
+                emptyVerticalGap(3),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
@@ -92,89 +86,25 @@ class DispatchInfo extends StatelessWidget {
                         ))
                   ],
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
+                emptyVerticalGap(10),
                 Divider(
                   height: 5,
                   thickness: 2,
                   color: Colors.black.withOpacity(0.1),
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text("Tracker Id:",
-                        style: TextStyle(
-                          fontSize: 16,
-                        )),
-                    Text("2tYM45",
-                        style: TextStyle(
-                          fontSize: 16,
-                        ))
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Divider(
-                  height: 5,
-                  thickness: 2,
-                  color: Colors.black.withOpacity(0.1),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text("Vechile NO:",
-                        style: TextStyle(
-                          fontSize: 16,
-                        )),
-                    Text("Ba 2 Kha 1645",
-                        style: TextStyle(
-                          fontSize: 16,
-                        ))
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Divider(
-                  height: 5,
-                  thickness: 2,
-                  color: Colors.black.withOpacity(0.1),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text("Total Items:",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                    Text("5",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold))
-                  ],
-                ),
+                emptyVerticalGap(10),
+                RowDispatch("Tracker Id:", "2tYM45"),
+                emptyVerticalGap(10),
+                applyDivider(),
+                emptyVerticalGap(10),
+                RowDispatch("Vehicle No:", "Ba 2 Kha 1645"),
+                emptyVerticalGap(10),
+                applyDivider(),
+                emptyVerticalGap(10),
+                RowDispatch("Total Items:", "5"),
                 const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text("Total Amount:",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                    Text("500",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold))
-                  ],
-                ),
-                const SizedBox(height: 60),
+                RowDispatch("Total Amount:", "500"),
+                emptyVerticalGap(60),
                 SizedBox(
                   height: 45,
                   child: ElevatedButton(

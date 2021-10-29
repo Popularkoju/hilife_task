@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hilifeui/helper/custom_widgets.dart';
+import 'package:hilifeui/helper/utils.dart';
 import 'package:hilifeui/models/pending_models.dart';
 
 class ApprovedRequest extends StatelessWidget {
@@ -40,19 +42,6 @@ class ApprovedRequest extends StatelessWidget {
                                       ? Colors.red
                                       : Colors.green,
                                 ),
-                                // child: Center(
-                                //   child: pendingModel.isPending
-                                //       ? const Text("APPROVED",
-                                //           style: TextStyle(
-                                //               fontSize: 16,
-                                //               fontWeight: FontWeight.bold,
-                                //               color: Colors.white))
-                                //       : const Text("PENDING",
-                                //           style: TextStyle(
-                                //               fontSize: 16,
-                                //               fontWeight: FontWeight.bold,
-                                //               color: Colors.white)),
-                                // )
                               ),
                             ]),
                         SizedBox(height: 3),
@@ -60,39 +49,11 @@ class ApprovedRequest extends StatelessWidget {
                             height: 5,
                             thickness: 2,
                             color: Colors.black.withOpacity(0.2)),
-                        SizedBox(height: 3),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text("Order Id:",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                )),
-                            Text("#4564",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                ))
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text("Order Date:",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                )),
-                            Text("3/12/2078",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                ))
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
+                        emptyVerticalGap(3),
+                        RowAP("Order Id:", pendingModel.orderDate),
+                        emptyVerticalGap(3),
+                        RowAP("Order Date:", pendingModel.orderDate),
+                        emptyVerticalGap(3),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -120,8 +81,6 @@ class ApprovedRequest extends StatelessWidget {
               ),
             ),
           )
-        : const SizedBox(
-            height: 0,
-          );
+        : emptyVerticalGap(0);
   }
 }

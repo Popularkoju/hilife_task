@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hilifeui/helper/utils.dart';
 
 class CompanyName extends StatelessWidget {
   const CompanyName({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class CompanyName extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.white))),
           ),
-          const SizedBox(width: 20),
+          emptyHorizontalGap(20),
           const Text("Bihani Suppliers",
               style: TextStyle(
                 fontSize: 20,

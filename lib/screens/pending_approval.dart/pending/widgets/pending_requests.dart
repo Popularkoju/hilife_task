@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hilifeui/helper/custom_widgets.dart';
+import 'package:hilifeui/helper/utils.dart';
 import 'package:hilifeui/models/pending_models.dart';
 
 class PendingRequest extends StatelessWidget {
@@ -40,58 +42,15 @@ class PendingRequest extends StatelessWidget {
                                       ? Colors.red
                                       : Colors.green,
                                 ),
-                                // child: Center(
-                                //   child: pendingModel.isPending
-                                //       ? const Text("APPROVED",
-                                //           style: TextStyle(
-                                //               fontSize: 16,
-                                //               fontWeight: FontWeight.bold,
-                                //               color: Colors.white))
-                                //       : const Text("PENDING",
-                                //           style: TextStyle(
-                                //               fontSize: 16,
-                                //               fontWeight: FontWeight.bold,
-                                //               color: Colors.white)),
-                                // )
                               ),
                             ]),
-                        SizedBox(height: 3),
-                        Divider(
-                            height: 5,
-                            thickness: 2,
-                            color: Colors.black.withOpacity(0.2)),
-                        SizedBox(height: 3),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text("Order Id:",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                )),
-                            Text(pendingModel.orderId,
-                                style: const TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold))
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text("Order Date:",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                )),
-                            Text(pendingModel.orderDate,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                ))
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
+                        emptyVerticalGap(3),
+                        applyDivider(),
+                        emptyVerticalGap(3),
+                        RowAP("Order Id:", pendingModel.orderId),
+                        emptyVerticalGap(5),
+                        RowAP("Order Date", pendingModel.orderDate),
+                        emptyVerticalGap(5),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
